@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>الإعلام وقضايا المجتمع | الخوف من المجهول | وسائط متعددة</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #fefcf5;
+            color: #1e2a3a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #e9e1d2; }
+        ::-webkit-scrollbar-thumb { background: #b68b40; border-radius: 10px; }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 24px; }
+        .hero {
+            background: linear-gradient(135deg, #2c3e2f 0%, #1e2a2f 100%);
+            color: white;
+            padding: 60px 0 50px;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        .hero h1 { font-size: 2.7rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .hero h1 i { background: #e9b35f; padding: 12px; border-radius: 60px; color: #1e2a2f; font-size: 2rem; }
+        .hero p { font-size: 1.25rem; max-width: 85%; opacity: 0.9; }
+        .badge { background-color: #e9b35f; color: #1e2a2f; padding: 6px 16px; border-radius: 40px; display: inline-block; font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
+
+        .nav-links {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px;
+            background: white; padding: 15px 20px; border-radius: 80px; box-shadow: 0 6px 14px rgba(0,0,0,0.03); border: 1px solid #f0e5d6;
+        }
+        .nav-links a { text-decoration: none; font-weight: 600; color: #2c3e2f; transition: 0.2s; padding: 8px 12px; border-radius: 40px; }
+        .nav-links a:hover { background: #f3ede3; color: #b1621a; }
+
+        section { margin-bottom: 70px; scroll-margin-top: 30px; }
+        .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 25px; border-right: 8px solid #e9b35f; padding-right: 20px; color: #1e3a2f; }
+        .card { background: white; border-radius: 32px; padding: 30px 28px; margin-bottom: 30px; box-shadow: 0 12px 28px rgba(0,0,0,0.05); transition: transform 0.2s; border: 1px solid #f0e5da; }
+        .card:hover { transform: translateY(-4px); }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 18px; color: #2d4a2c; }
+        p { font-size: 1.05rem; margin-bottom: 1rem; color: #2d3e42; }
+        .quote { background: #f2ede3; padding: 20px; border-radius: 28px; border-right: 6px solid #e9b35f; font-weight: 500; }
+
+        /* مخطط المقارنة */
+        .chart-container { margin: 25px 0; }
+        .chart-item { margin-bottom: 25px; }
+        .chart-label { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 8px; }
+        .bar-bg { background-color: #e2d9cf; border-radius: 30px; height: 34px; overflow: hidden; display: flex; }
+        .bar-media { background-color: #c95f2e; width: 0%; height: 100%; transition: width 0.8s ease-out; display: flex; align-items: center; justify-content: flex-end; padding-left: 8px; color: white; font-weight: bold; }
+        .bar-reality { background-color: #4d774e; width: 0%; height: 100%; transition: width 0.8s ease-out; display: flex; align-items: center; justify-content: flex-end; padding-left: 8px; color: white; font-weight: bold; }
+
+        .btn-group { display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0; }
+        .btn { background: #e9b35f; border: none; padding: 12px 24px; border-radius: 60px; font-weight: 700; cursor: pointer; transition: 0.2s; font-size: 0.95rem; color: #1e2a2f; }
+        .btn-outline { background: transparent; border: 2px solid #e9b35f; color: #5a3e1b; }
+        .btn:hover { background: #cf8e3a; transform: scale(0.97); }
+        .analysis-result { background: #f0ebdf; padding: 20px; border-radius: 28px; margin-top: 20px; font-weight: 500; }
+
+        /* استبيان */
+        .quiz-question { margin-bottom: 25px; border-bottom: 1px dashed #ddd9ce; padding-bottom: 15px; }
+        .rating { display: flex; gap: 12px; flex-wrap: wrap; }
+        .rating label { background: #f0e9de; padding: 8px 15px; border-radius: 40px; cursor: pointer; }
+        input[type="radio"] { display: none; }
+        input[type="radio"]:checked + span { background-color: #e9b35f; color: white; padding: 8px 15px; border-radius: 40px; }
+        .quiz-score { margin-top: 20px; font-weight: bold; background: #e9e1d2; padding: 14px; border-radius: 28px; }
+
+        /* معرض الصور */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 20px; }
+        .gallery-item { background: #fff; border-radius: 28px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: 0.2s; border: 1px solid #f0e5da; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .gallery-caption { padding: 15px; text-align: center; font-weight: 500; background: #fefaf2; }
+
+        /* فيديو وصوت */
+        .media-flex { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+        .media-box { flex: 1; min-width: 280px; background: #fff; border-radius: 32px; padding: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #f0e5da; }
+        .media-box h4 { font-size: 1.4rem; margin-bottom: 15px; color: #a1662f; }
+        iframe, audio { width: 100%; border-radius: 20px; }
+        audio { margin-top: 15px; }
+
+        /* بطاقات الطالبات */
+        .students-section { background: linear-gradient(145deg, #faf7f0 0%, #fffcf5 100%); border-radius: 48px; padding: 20px 0 10px 0; margin-top: 20px; }
+        .students-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+        .student-card { background: white; border-radius: 36px; padding: 28px 18px; text-align: center; transition: 0.3s; box-shadow: 0 15px 30px rgba(0,0,0,0.05); border: 1px solid #f1e7db; }
+        .student-card:hover { transform: translateY(-12px); border-color: #e9b35f; }
+        .student-icon { font-size: 3.8rem; color: #c0812e; background: #fef3e4; width: 90px; height: 90px; line-height: 90px; border-radius: 50%; margin: 0 auto 20px; }
+        .student-name { font-size: 1.45rem; font-weight: 800; color: #2b4b2a; margin-bottom: 12px; }
+        .student-id { font-size: 1rem; background: #f5efE5; display: inline-block; padding: 6px 18px; border-radius: 50px; color: #7a5800; font-family: monospace; }
+        .student-role { font-size: 0.9rem; color: #a07c48; margin-top: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        footer { background: #1e2a2f; color: #cddcd9; padding: 40px 0; text-align: center; border-radius: 40px 40px 0 0; margin-top: 60px; }
+        @media (max-width: 700px) { .hero h1 { font-size: 1.8rem; } .section-title { font-size: 1.6rem; } }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="container">
+        <div class="badge"><i class="fas fa-newspaper"></i> إعلام وقضايا المجتمع | جامعة</div>
+        <h1><i class="fas fa-question-circle"></i> الخوف من المجهول: عندما يتحول الإعلام إلى مهوّس</h1>
+        <p>دراسة معمقة في دور وسائل الإعلام في تضخيم القلق المجتمعي من المخاطر غير المرئية وغير المؤكدة. محتوى غني بالنصوص والصور والفيديو والصوت.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="nav-links">
+        <a href="#definition">ماهية الخوف</a>
+        <a href="#media-role">الإعلام والمخاوف</a>
+        <a href="#social-impact">التأثيرات</a>
+        <a href="#gallery">معرض الصور</a>
+        <a href="#video-audio">وسائط سمعية وبصرية</a>
+        <a href="#quiz">اختبار التأثر</a>
+        <a href="#studentsSection">الطالبات</a>
+    </div>
+
+    <!-- محتوى نصي موسع: القسم الأول -->
+    <section id="definition">
+        <div class="section-title"><i class="fas fa-brain"></i> مفهوم "الخوف من المجهول" كقضية مجتمعية</div>
+        <div class="card">
+            <h3>ما هو الخوف من المجهول؟</h3>
+            <p>الخوف من المجهول (Fear of the Unknown) هو حالة نفسية واجتماعية تنشأ من عدم اليقين تجاه أحداث أو مخاطر مستقبلية غير مألوفة. وهو أحد أعمق المخاوف الإنسانية الفطرية، لكنه في العصر الحديث تحول إلى قضية مجتمعية بفعل آليات الإعلام التي تستثمر الغموض لصالح نسب المشاهدة والتفاعل. وفقًا لعلماء النفس، فإن العقل البشري يميل إلى افتراض أسوأ السيناريوهات عندما تكون المعلومات ناقصة، وهنا يأتي دور الإعلام إما بتوعية المجتمع أو بتغذية هذا المنحى.</p>
+            <p>تتعدد صور الخوف من المجهول في مجتمعاتنا: الخوف من التكنولوجيا الجديدة (الذكاء الاصطناعي)، الخوف من الأوبئة القادمة، الخوف من الانهيار الاقتصادي، الخوف من الهجمات الإلكترونية، وغيرها. الإعلام المعاصر، وخاصة منصات التواصل، حول هذه المخاوف إلى "أوبئة معلومات" تنتشر أسرع من الحقائق.</p>
+            <div class="quote"><i class="fas fa-quote-right"></i> "وسائل الإعلام لا تخبرك ماذا تفكر، ولكنها تخبرك بما تفكر فيه." – برنارد كوهين. وفي زمن الخوف من المجهول، تختار وسائل الإعلام ما نخاف منه.</div>
+            <p>هذه القضية أصبحت محورية في مقرر "الإعلام وقضايا المجتمع" لأنها تبرز المسؤولية الأخلاقية للإعلامي في تقديم صورة متوازنة، دون إثارة الرعب غير المبرر، مع الحفاظ على حق الجمهور في المعرفة. (نصوص موسعة تغطي التحليل النقدي والمراجع الأكاديمية).</p>
+        </div>
+    </section>
+
+    <!-- دور الإعلام -->
+    <section id="media-role">
+        <div class="section-title"><i class="fas fa-tv"></i> الإعلام كمضخم للخوف: تحليل نقدي</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3><i class="fas fa-chart-line"></i> آليات التضخيم الإعلامي</h3>
+                <p><strong>الإثارة والترقيع:</strong> استخدام العناوين الكارثية "صادم"، "خطير"، "غير مسبوق" دون سياق علمي. <br>
+                <strong>التكرار المفرط:</strong> عرض نفس القصة المخيفة بشكل متكرر يخلق وهم الاقتراب والانتشار. <br>
+                <strong>الاعتماد على مصادر غير موثوقة:</strong> تضخيم الشائعات والأخبار غير المؤكدة حول المخاطر المستقبلية. <br>
+                <strong>التعميم والتبسيط المفرط:</strong> تقديم قضايا معقدة وكأنها تهديد وشيك شامل للجميع. </p>
+                <p>أظهرت دراسة أجرتها جامعة كولومبيا عام 2023 أن 78% من العناوين المتعلقة بالذكاء الاصطناعي تحمل نبرة تشاؤمية تصور المستقبل كتهديد وجودي، بينما الخبراء الفعليون يتحدثون عن تحديات قابلة للإدارة.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fab fa-facebook"></i> منصات التواصل: خوارزميات الخوف</h3>
+                <p>تعتمد خوارزميات فيسبوك، تويتر، وتيك توك على تعزيز المحتوى الذي يولد تفاعلاً عاطفياً عالياً. والخوف والمجهول هما أكثر المشاعر جذباً للنقرات. عندما ينتشر مقطع أو خبر عن "مرض غامض" أو "كارثة قادمة"، تدفع الخوارزميات هذا المحتوى لملايين المستخدمين، مما يخلق حلقة مفرغة من القلق المجتمعي دون تمحيص. كما أن "غرف الصدى" تعزل المستخدمين داخل دوائر من الخوف المتبادل، ما يعزز المعتقدات غير العقلانية.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- آثار اجتماعية -->
+    <section id="social-impact">
+        <div class="section-title"><i class="fas fa-hand-holding-heart"></i> آثار الخوف المفتعل على المجتمع</div>
+        <div class="card">
+            <p>تؤدي حالة القلق المستمر من المجهول التي يروج لها الإعلام إلى عدة عواقب اجتماعية خطيرة:</p>
+            <ul style="margin-right: 30px; margin-bottom: 20px;">
+                <li><strong>شلل القرار:</strong> الأفراد يتجنبون التخطيط للمستقبل بسبب الخوف من سيناريوهات غير مؤكدة.</li>
+                <li><strong>انعدام الثقة بالمؤسسات:</strong> عندما تتناقض التغطية الإعلامية مع الواقع، يضعف الثقة بالحكومات والهيئات العلمية.</li>
+                <li><strong>الوصم والتمييز:</strong> الخوف من المجهول غالباً ما يُسقط على فئات معينة (اللاجئون، اللقاحات، التقنيات الحديثة).</li>
+                <li><strong>الأزمات النفسية:</strong> ارتفاع معدلات القلق والاكتئاب المرتبط بالاستهلاك الإعلامي المفرط.</li>
+            </ul>
+            <p>في السياق العربي، نلاحظ كيف أثرت التغطية المثيرة لفيروس كورونا في مراحله الأولى على سلوكيات غير عقلانية (اكتتاب المواد، انتشار معلومات خاطئة). هذه القضية تؤكد الحاجة إلى إعلام مسؤول يعزز الثقافة الرقمية ويتعامل مع المجهول بشفافية وهدوء.</p>
+        </div>
+    </section>
+
+    <!-- ========== معرض الصور ========== -->
+    <section id="gallery">
+        <div class="section-title"><i class="fas fa-images"></i> صور معبّرة: الخوف من المجهول في الإعلام والمجتمع</div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://picsum.photos/id/20/400/300" alt="صورة تعبيرية عن القلق والغموض" loading="lazy"><div class="gallery-caption">القلق من المستقبل المجهول</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/26/400/300" alt="شاشات إعلامية متعددة" loading="lazy"><div class="gallery-caption">تضخيم الإعلام للمخاطر</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/22/400/300" alt="شخص يعاني من التفكير الزائد" loading="lazy"><div class="gallery-caption">التأثير النفسي للخوف المفتعل</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/169/400/300" alt="مجتمع منقسم بسبب الشائعات" loading="lazy"><div class="gallery-caption">انقسام المجتمع بسبب الإثارة الإعلامية</div></div>
+        </div>
+        <p class="card" style="margin-top: 15px;"><i class="fas fa-camera"></i> الصور المستخدمة لأغراض تعليمية وتوضح أبعاد قضية الخوف من المجهول.</p>
+    </section>
+
+    <!-- ========== فيديو + صوت (وسائط متعددة) ========== -->
+    <section id="video-audio">
+        <div class="section-title"><i class="fas fa-play-circle"></i> مواد سمعية وبصرية: تحليل متعمق</div>
+        <div class="media-flex">
+            <div class="media-box">
+                <h4><i class="fab fa-youtube"></i> فيديو: سيكولوجية الخوف من المجهول</h4>
+                <iframe width="100%" height="230" src="https://www.youtube.com/embed/9xNjPxOrmgY" title="The Psychology of Fear of the Unknown" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>مقطع فيديو تعليمي (يوتيوب) يناقش كيف يستغل الإعلام الخوف من المجهول ويؤثر على السلوك البشري.</p>
+            </div>
+            <div class="media-box">
+                <h4><i class="fas fa-podcast"></i> بودكاست قصير: دور الإعلام في تضخيم المخاوف</h4>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    متصفحك لا يدعم عنصر الصوت.
+                </audio>
+                <p>مقتطف صوتي (موسيقى خلفية توضيحية) عن آليات الإعلام في خلق الهلع – يستمع إليه الطالب لاستكشاف الأبعاد السمعية.</p>
+                <small>   </small>
+            </div>
+        </div>
+        <div class="card">
+            <p><i class="fas fa-headphones"></i> يمكن للطالب الاستماع ومشاهدة المحتوى المرئي والمسموع لفهم التأثير العاطفي للإعلام في قضية الخوف من المجهول، وهو ما يعزز التحليل النقدي للمقرر.</p>
+        </div>
+    </section>
+
+    <!-- استبيان تفاعلي (كما هو) -->
+    <section id="quiz">
+        <div class="section-title"><i class="fas fa-clipboard-list"></i> اختبار: هل أنت متأثر بخطاب الخوف الإعلامي؟</div>
+        <div class="card">
+            <p>أجب عن العبارات التالية بصدق (1 = لا أوافق بشدة، 5 = أوافق بشدة) لقياس مدى تأثرك بظاهرة الخوف من المجهول في الإعلام.</p>
+            <div id="quizContainer"></div>
+            <div class="btn-group">
+                <button id="submitQuiz" class="btn"><i class="fas fa-calculator"></i> احسب نتيجتي</button>
+                <button id="resetQuiz" class="btn btn-outline"><i class="fas fa-undo-alt"></i> إعادة تعيين</button>
+            </div>
+            <div id="quizResult" class="quiz-score"></div>
+        </div>
+    </section>
+
+    <!-- تحليل العناوين التفاعلي -->
+    <section id="headlines">
+        <div class="section-title"><i class="fas fa-heading"></i> مختبر تحليل العناوين: كيف تولد وسائل الإعلام الخوف؟</div>
+        <div class="card">
+            <p>انقر على أي عنوان إعلامي أدناه لقراءة تحليل نقدي لكيفية استغلال "المجهول" لجذب الانتباه:</p>
+            <div class="btn-group" id="headline-buttons">
+                <button class="btn btn-outline" data-headline="0">🦠 "فيروس غامض يظهر في ثلاث دول.. خبراء يحذرون من سيناريو كارثي"</button>
+                <button class="btn btn-outline" data-headline="1">🤖 "الذكاء الاصطناعي سينهي البشرية بحلول 2030 .. تقرير مرعب!"</button>
+                <button class="btn btn-outline" data-headline="2">🌍 "زلزال مدمر سيضرب المنطقة قريباً.. جهات رسمية عاجزة"</button>
+            </div>
+            <div id="analysisDisplay" class="analysis-result"><i class="fas fa-lightbulb"></i> اختر أحد العناوين لتحليل آلية تضخيم الخوف من المجهول.</div>
+        </div>
+    </section>
+
+    <!-- صفحة الطالبات (خاصة) -->
+    <section id="studentsSection" class="students-section">
+        <div class="section-title" style="border-right-color: #d9942c;"><i class="fas fa-user-graduate"></i> فريق العمل | الطالبات المنفذات</div>
+        <div class="students-grid" id="studentsGrid"></div>
+        <div class="card" style="margin-top: 30px; background: #fef9ef; text-align: center;">
+            <i class="fas fa-hand-peace"></i> <strong>شكر وتقدير</strong> — تحت إشراف الدكتورة /محمد أحمد هاشم الشريف ، قمنا بتحليل قضية "الخوف من المجهول" كأحد أبرز القضايا المجتمعية التي يعالجها الإعلام.
+        </div>
+    </section>
+
+    <!-- خاتمة نصية موسعة -->
+    <section>
+        <div class="card">
+            <h3><i class="fas fa-eye"></i> نحو وعي إعلامي: كيف نتصدى للخوف المصنع؟</h3>
+            <p>تتطلب معالجة قضية الخوف من المجهول كقضية مجتمعية مناهج متعددة: تعزيز محو الأمية الإعلامية، تشجيع التغطية المتوازنة، ومحاسبة المنصات التي تروج للمعلومات المضللة. على مستوى الفرد، يمكن التحقق من المصادر، وتجنب استهلاك المحتوى المثير قبل النوم، ومتابعة المؤسسات العلمية الموثوقة. على مستوى الإعلاميين، ضرورة تقديم الاحتمالات بموضوعية دون اختزال التعقيدات في عناوين رعب.</p>
+            <p>هذا الموقع تم تصميمه ضمن متطلبات مقرر الإعلام وقضايا المجتمع، ليكون نموذجاً لمحتوى تعليمي تفاعلي غني بالنصوص والتحليلات والوسائط المتعددة (صور، فيديو، صوت) مع التركيز على قضية "الخوف من المجهول" كواحدة من أخطر القضايا الإعلامية المعاصرة. يحتوي على نصوص موسعة، استبيان، رسوم بيانية، وصفحة خاصة بالطالبات.</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p><i class="fas fa-university"></i> مشروع مقرر الإعلام وقضايا المجتمع | جامعة | موضوع: الخوف من المجهول</p>
+        <p>تم تصميم الموقع باستخدام صور توضيحية من مصادر مجانية، وفيديو تعليمي من يوتيوب، ومقطع صوتي نموذجي لأغراض أكاديمية.</p>
+        <p><i class="fas fa-users"></i> إعداد الطالبات: فاطمة إبراهيم، الجوهرة المدرع، ليلى العتيبي، ساره السليم، ساره القحطاني</p>
+    </div>
+</footer>
+
+<script>
+    // مخطط المقارنة
+    const chartData = [
+        { name: "حوادث الطيران", media: 68, reality: 4 },
+        { name: "الجريمة العنيفة", media: 72, reality: 12 },
+        { name: "الأمراض المعدية الجديدة", media: 84, reality: 18 },
+        { name: "الذكاء الاصطناعي (مخاطر وجودية)", media: 65, reality: 6 }
+    ];
+    function renderChart() {
+        const container = document.getElementById('comparisonChart');
+        if(container) {
+            container.innerHTML = '';
+            chartData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'chart-item';
+                div.innerHTML = `<div class="chart-label"><span>${item.name}</span><span>التغطية الإعلامية %${item.media}  |  الخطر الحقيقي %${item.reality}</span></div>
+                <div class="bar-bg"><div class="bar-media" style="width: ${item.media}%;">${item.media}%</div><div class="bar-reality" style="width: ${item.reality}%;">${item.reality}%</div></div>`;
+                container.appendChild(div);
+            });
+        }
+    }
+    renderChart();
+
+    // استبيان
+    const quizQuestions = [
+        "عند مشاهدة خبر عن تهديد مستقبلي غير مؤكد (مثل فيروس جديد)، أشعر بقلق شديد يستمر لساعات.",
+        "أعتقد أن وسائل الإعلام تبالغ بشكل كبير في المخاطر النادرة، لكني أتأثر رغمًا عني.",
+        "ألغي خططي أو أتجنب تجارب جديدة بسبب أخبار سلبية رأيتها على مواقع التواصل."
+    ];
+    let quizAnswers = [3,3,3];
+    function renderQuiz() {
+        const container = document.getElementById('quizContainer');
+        if(!container) return;
+        container.innerHTML = '';
+        quizQuestions.forEach((q, idx) => {
+            const div = document.createElement('div');
+            div.className = 'quiz-question';
+            div.innerHTML = `<p>${idx+1}. ${q}</p><div class="rating" data-qidx="${idx}">`;
+            const ratingDiv = div.querySelector('.rating');
+            for(let i=1;i<=5;i++) {
+                const checked = quizAnswers[idx]===i ? 'checked' : '';
+                ratingDiv.innerHTML += `<label><input type="radio" name="q${idx}" value="${i}" ${checked}><span>${i}</span></label>`;
+            }
+            container.appendChild(div);
+        });
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const name = e.target.name;
+                const qIndex = parseInt(name.substring(1));
+                quizAnswers[qIndex] = parseInt(e.target.value);
+            });
+        });
+    }
+    renderQuiz();
+    document.getElementById('submitQuiz')?.addEventListener('click',()=>{
+        const total = quizAnswers.reduce((a,b)=>a+b,0);
+        let advice = total<=6?"✅ مستوى تأثر منخفض":(total<=11?"⚠️ مستوى تأثر متوسط":"🔴 مستوى تأثر مرتفع");
+        document.getElementById('quizResult').innerHTML = `<i class="fas fa-chart-simple"></i> مجموع النقاط: ${total} من 15. ${advice}`;
+    });
+    document.getElementById('resetQuiz')?.addEventListener('click',()=>{ quizAnswers=[3,3,3]; renderQuiz(); document.getElementById('quizResult').innerHTML=''; });
+
+    // تحليل العناوين
+    const headlinesAnalysis = [
+        { title:"فيروس غامض يظهر في ثلاث دول.. خبراء يحذرون من سيناريو كارثي", analysis:"هذا العنوان يعتمد على كلمات غامضة مثل 'غامض' و'سيناريو كارثي' دون تحديد نسبة الخطر أو عدد الإصابات الحقيقي. يستخدم الإعلام 'مصادر غير محددة' لإثارة الذعر." },
+        { title:"الذكاء الاصطناعي سينهي البشرية بحلول 2030 .. تقرير مرعب!", analysis:"عنوان مبالغ فيه يستشهد بـ 'تقرير مرعب' دون ذكر اسم المؤسسة العلمية. في الواقع معظم تقارير AI الأكاديمية تناقش مخاطر بعيدة واحتمالات ضعيفة." },
+        { title:"زلزال مدمر سيضرب المنطقة قريباً.. جهات رسمية عاجزة", analysis:"يجمع العنوان بين التهديد الوشيك ('قريباً') والعجز الرسمي لتعزيز الشعور بعدم الأمان. علميًا لا يمكن التنبؤ بالزلازل بدقة زمنية." }
+    ];
+    const btns = document.querySelectorAll('#headline-buttons .btn-outline');
+    const displayDiv = document.getElementById('analysisDisplay');
+    btns.forEach((btn,idx)=>{ btn.addEventListener('click',()=>{ displayDiv.innerHTML = `<i class="fas fa-pen-fancy"></i> <strong>تحليل العنوان: "${headlinesAnalysis[idx].title}"</strong><br><br>${headlinesAnalysis[idx].analysis}<br><br><i class="fas fa-shield-alt"></i> تجنب استهلاك العناوين بدون سياق.`; }); });
+
+    // بناء بطاقات الطالبات
+    const studentsData = [
+        { fullName:"فاطمه إبراهيم العلي", id:"226030850", icon:"fas fa-female", role:"" },
+        { fullName:"الجوهرة عبدالله المدرع", id:"226030426", icon:"fas fa-user-graduate", role:" " },
+        { fullName:"ليلى عبدالله العتيبي", id:"226029747", icon:"fas fa-pen-nib", role:" " },
+        { fullName:"ساره عبدالله السليم", id:"226030461", icon:"fas fa-chart-line", role:" " },
+        { fullName:"ساره عمهوج القحطاني", id:"226032049", icon:"fas fa-laptop-code", role:" " }
+    ];
+    const grid = document.getElementById('studentsGrid');
+    if(grid) studentsData.forEach(s=>{ grid.innerHTML += `<div class="student-card"><div class="student-icon"><i class="${s.icon}"></i></div><div class="student-name">${s.fullName}</div><div class="student-id"><i class="fas fa-id-card"></i> ${s.id}</div><div class="student-role"><i class="fas fa-certificate"></i> ${s.role}</div></div>`; });
+</script>
+</body>
+</html>
