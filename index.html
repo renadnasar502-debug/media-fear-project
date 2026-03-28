@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>الإعلام وقضايا المجتمع | الخوف من المجهول | وسائط متعددة</title>
+    <title>الإعلام وقضايا المجتمع | جامعة الملك فيصل | الخوف من المجهول</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -95,12 +95,16 @@
         .students-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
         .student-card { background: white; border-radius: 36px; padding: 28px 18px; text-align: center; transition: 0.3s; box-shadow: 0 15px 30px rgba(0,0,0,0.05); border: 1px solid #f1e7db; }
         .student-card:hover { transform: translateY(-12px); border-color: #e9b35f; }
-        .student-icon { font-size: 3.8rem; color: #c0812e; background: #fef3e4; width: 90px; height: 90px; line-height: 90px; border-radius: 50%; margin: 0 auto 20px; }
-        .student-name { font-size: 1.45rem; font-weight: 800; color: #2b4b2a; margin-bottom: 12px; }
-        .student-id { font-size: 1rem; background: #f5efE5; display: inline-block; padding: 6px 18px; border-radius: 50px; color: #7a5800; font-family: monospace; }
-        .student-role { font-size: 0.9rem; color: #a07c48; margin-top: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .student-icon { font-size: 3.2rem; color: #c0812e; background: #fef3e4; width: 85px; height: 85px; line-height: 85px; border-radius: 50%; margin: 0 auto 20px; }
+        .student-name { font-size: 1.45rem; font-weight: 800; color: #2b4b2a; margin-bottom: 8px; }
+        .student-id { font-size: 0.9rem; background: #f5efE5; display: inline-block; padding: 4px 14px; border-radius: 50px; color: #7a5800; font-family: monospace; }
+        .student-major { font-size: 0.85rem; color: #8b6b3c; margin-top: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
         footer { background: #1e2a2f; color: #cddcd9; padding: 40px 0; text-align: center; border-radius: 40px 40px 0 0; margin-top: 60px; }
+        .social-icons { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-icons a { color: #e9b35f; font-size: 1.6rem; transition: 0.2s; }
+        .social-icons a:hover { color: white; transform: scale(1.1); }
+
         @media (max-width: 700px) { .hero h1 { font-size: 1.8rem; } .section-title { font-size: 1.6rem; } }
     </style>
 </head>
@@ -108,9 +112,15 @@
 
 <div class="hero">
     <div class="container">
-        <div class="badge"><i class="fas fa-newspaper"></i> إعلام وقضايا المجتمع | جامعة</div>
+        <div class="badge"><i class="fas fa-university"></i> إعلام وقضايا المجتمع | جامعة الملك فيصل</div>
         <h1><i class="fas fa-question-circle"></i> الخوف من المجهول: عندما يتحول الإعلام إلى مهوّس</h1>
         <p>دراسة معمقة في دور وسائل الإعلام في تضخيم القلق المجتمعي من المخاطر غير المرئية وغير المؤكدة. محتوى غني بالنصوص والصور والفيديو والصوت.</p>
+        <div class="social-icons">
+            <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+        </div>
     </div>
 </div>
 
@@ -120,12 +130,12 @@
         <a href="#media-role">الإعلام والمخاوف</a>
         <a href="#social-impact">التأثيرات</a>
         <a href="#gallery">معرض الصور</a>
-        <a href="#video-audio">وسائط سمعية وبصرية</a>
+        <a href="#video-audio">وسائط متعددة</a>
         <a href="#quiz">اختبار التأثر</a>
         <a href="#studentsSection">الطالبات</a>
+        <a href="#references">المراجع</a>
     </div>
 
-    <!-- محتوى نصي موسع: القسم الأول -->
     <section id="definition">
         <div class="section-title"><i class="fas fa-brain"></i> مفهوم "الخوف من المجهول" كقضية مجتمعية</div>
         <div class="card">
@@ -133,11 +143,10 @@
             <p>الخوف من المجهول (Fear of the Unknown) هو حالة نفسية واجتماعية تنشأ من عدم اليقين تجاه أحداث أو مخاطر مستقبلية غير مألوفة. وهو أحد أعمق المخاوف الإنسانية الفطرية، لكنه في العصر الحديث تحول إلى قضية مجتمعية بفعل آليات الإعلام التي تستثمر الغموض لصالح نسب المشاهدة والتفاعل. وفقًا لعلماء النفس، فإن العقل البشري يميل إلى افتراض أسوأ السيناريوهات عندما تكون المعلومات ناقصة، وهنا يأتي دور الإعلام إما بتوعية المجتمع أو بتغذية هذا المنحى.</p>
             <p>تتعدد صور الخوف من المجهول في مجتمعاتنا: الخوف من التكنولوجيا الجديدة (الذكاء الاصطناعي)، الخوف من الأوبئة القادمة، الخوف من الانهيار الاقتصادي، الخوف من الهجمات الإلكترونية، وغيرها. الإعلام المعاصر، وخاصة منصات التواصل، حول هذه المخاوف إلى "أوبئة معلومات" تنتشر أسرع من الحقائق.</p>
             <div class="quote"><i class="fas fa-quote-right"></i> "وسائل الإعلام لا تخبرك ماذا تفكر، ولكنها تخبرك بما تفكر فيه." – برنارد كوهين. وفي زمن الخوف من المجهول، تختار وسائل الإعلام ما نخاف منه.</div>
-            <p>هذه القضية أصبحت محورية في مقرر "الإعلام وقضايا المجتمع" لأنها تبرز المسؤولية الأخلاقية للإعلامي في تقديم صورة متوازنة، دون إثارة الرعب غير المبرر، مع الحفاظ على حق الجمهور في المعرفة. (نصوص موسعة تغطي التحليل النقدي والمراجع الأكاديمية).</p>
+            <p>هذه القضية أصبحت محورية في مقرر "الإعلام وقضايا المجتمع" لأنها تبرز المسؤولية الأخلاقية للإعلامي في تقديم صورة متوازنة، دون إثارة الرعب غير المبرر، مع الحفاظ على حق الجمهور في المعرفة.</p>
         </div>
     </section>
 
-    <!-- دور الإعلام -->
     <section id="media-role">
         <div class="section-title"><i class="fas fa-tv"></i> الإعلام كمضخم للخوف: تحليل نقدي</div>
         <div class="grid-2">
@@ -150,13 +159,12 @@
                 <p>أظهرت دراسة أجرتها جامعة كولومبيا عام 2023 أن 78% من العناوين المتعلقة بالذكاء الاصطناعي تحمل نبرة تشاؤمية تصور المستقبل كتهديد وجودي، بينما الخبراء الفعليون يتحدثون عن تحديات قابلة للإدارة.</p>
             </div>
             <div class="card">
-                <h3><i class="fab fa-facebook"></i> منصات التواصل: خوارزميات الخوف</h3>
+                <h3><i class="fas fa-chalkboard-user"></i> منصات التواصل: خوارزميات الخوف</h3>
                 <p>تعتمد خوارزميات فيسبوك، تويتر، وتيك توك على تعزيز المحتوى الذي يولد تفاعلاً عاطفياً عالياً. والخوف والمجهول هما أكثر المشاعر جذباً للنقرات. عندما ينتشر مقطع أو خبر عن "مرض غامض" أو "كارثة قادمة"، تدفع الخوارزميات هذا المحتوى لملايين المستخدمين، مما يخلق حلقة مفرغة من القلق المجتمعي دون تمحيص. كما أن "غرف الصدى" تعزل المستخدمين داخل دوائر من الخوف المتبادل، ما يعزز المعتقدات غير العقلانية.</p>
             </div>
         </div>
     </section>
 
-    <!-- آثار اجتماعية -->
     <section id="social-impact">
         <div class="section-title"><i class="fas fa-hand-holding-heart"></i> آثار الخوف المفتعل على المجتمع</div>
         <div class="card">
@@ -171,35 +179,30 @@
         </div>
     </section>
 
-    <!-- ========== معرض الصور ========== -->
     <section id="gallery">
         <div class="section-title"><i class="fas fa-images"></i> صور معبّرة: الخوف من المجهول في الإعلام والمجتمع</div>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://picsum.photos/id/20/400/300" alt="صورة تعبيرية عن القلق والغموض" loading="lazy"><div class="gallery-caption">القلق من المستقبل المجهول</div></div>
-            <div class="gallery-item"><img src="https://picsum.photos/id/26/400/300" alt="شاشات إعلامية متعددة" loading="lazy"><div class="gallery-caption">تضخيم الإعلام للمخاطر</div></div>
-            <div class="gallery-item"><img src="https://picsum.photos/id/22/400/300" alt="شخص يعاني من التفكير الزائد" loading="lazy"><div class="gallery-caption">التأثير النفسي للخوف المفتعل</div></div>
-            <div class="gallery-item"><img src="https://picsum.photos/id/169/400/300" alt="مجتمع منقسم بسبب الشائعات" loading="lazy"><div class="gallery-caption">انقسام المجتمع بسبب الإثارة الإعلامية</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/20/400/300" alt="القلق والغموض" loading="lazy"><div class="gallery-caption">القلق من المستقبل المجهول</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/26/400/300" alt="شاشات إعلامية" loading="lazy"><div class="gallery-caption">تضخيم الإعلام للمخاطر</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/22/400/300" alt="تفكير زائد" loading="lazy"><div class="gallery-caption">التأثير النفسي للخوف المفتعل</div></div>
+            <div class="gallery-item"><img src="https://picsum.photos/id/169/400/300" alt="مجتمع منقسم" loading="lazy"><div class="gallery-caption">انقسام المجتمع بسبب الإثارة الإعلامية</div></div>
         </div>
         <p class="card" style="margin-top: 15px;"><i class="fas fa-camera"></i> الصور المستخدمة لأغراض تعليمية وتوضح أبعاد قضية الخوف من المجهول.</p>
     </section>
 
-    <!-- ========== فيديو + صوت (وسائط متعددة) ========== -->
     <section id="video-audio">
         <div class="section-title"><i class="fas fa-play-circle"></i> مواد سمعية وبصرية: تحليل متعمق</div>
         <div class="media-flex">
             <div class="media-box">
                 <h4><i class="fab fa-youtube"></i> فيديو: سيكولوجية الخوف من المجهول</h4>
-                <iframe width="100%" height="230" src="https://www.youtube.com/embed/9xNjPxOrmgY" title="The Psychology of Fear of the Unknown" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>مقطع فيديو تعليمي (يوتيوب) يناقش كيف يستغل الإعلام الخوف من المجهول ويؤثر على السلوك البشري.</p>
+                <iframe width="100%" height="230" src="https://www.youtube.com/embed/Mrgrrq4AEVI" title="فيديو تعليمي عن الخوف من المجهول" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>فيديو تعليمي من قناة "Ted-Ed" باللغة العربية يناقش كيف يعمل الخوف في الدماغ وكيف يستغله الإعلام.</p>
             </div>
             <div class="media-box">
-                <h4><i class="fas fa-podcast"></i> بودكاست قصير: دور الإعلام في تضخيم المخاوف</h4>
-                <audio controls>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    متصفحك لا يدعم عنصر الصوت.
-                </audio>
-                <p>مقتطف صوتي (موسيقى خلفية توضيحية) عن آليات الإعلام في خلق الهلع – يستمع إليه الطالب لاستكشاف الأبعاد السمعية.</p>
-                <small>   </small>
+                <h4><i class="fas fa-podcast"></i> بودكاست: دور الإعلام في تضخيم المخاوف</h4>
+                <iframe width="100%" height="230" src="https://www.youtube.com/embed/B2xxZvUyVyg" title="بودكاست عن الإعلام والمخاوف المجتمعية" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>بودكاست عربي يناقش تأثير الإعلام على المخاوف المجتمعية وكيفية التعامل معها.</p>
+                <small>حلقة من برنامج "فكر" تتناول الخوف من المجهول في عصر الإعلام الرقمي.</small>
             </div>
         </div>
         <div class="card">
@@ -207,7 +210,6 @@
         </div>
     </section>
 
-    <!-- استبيان تفاعلي (كما هو) -->
     <section id="quiz">
         <div class="section-title"><i class="fas fa-clipboard-list"></i> اختبار: هل أنت متأثر بخطاب الخوف الإعلامي؟</div>
         <div class="card">
@@ -221,7 +223,6 @@
         </div>
     </section>
 
-    <!-- تحليل العناوين التفاعلي -->
     <section id="headlines">
         <div class="section-title"><i class="fas fa-heading"></i> مختبر تحليل العناوين: كيف تولد وسائل الإعلام الخوف؟</div>
         <div class="card">
@@ -235,16 +236,31 @@
         </div>
     </section>
 
-    <!-- صفحة الطالبات (خاصة) -->
     <section id="studentsSection" class="students-section">
-        <div class="section-title" style="border-right-color: #d9942c;"><i class="fas fa-user-graduate"></i> فريق العمل | الطالبات المنفذات</div>
+        <div class="section-title" style="border-right-color: #d9942c;"><i class="fas fa-chalkboard-user"></i> فريق العمل | الطالبات المنفذات</div>
         <div class="students-grid" id="studentsGrid"></div>
         <div class="card" style="margin-top: 30px; background: #fef9ef; text-align: center;">
-            <i class="fas fa-hand-peace"></i> <strong>شكر وتقدير</strong> — تحت إشراف الدكتورة /محمد أحمد هاشم الشريف ، قمنا بتحليل قضية "الخوف من المجهول" كأحد أبرز القضايا المجتمعية التي يعالجها الإعلام.
+            <i class="fas fa-user-graduate"></i> <strong>تحت إشراف الدكتور / محمد أحمد هاشم الشريف</strong><br>
+            <span style="font-size: 0.9rem; color: #7a5a2e;"><i class="fas fa-graduation-cap"></i> قسم الاتصال والإعلام | باحثات ماجستير</span><br>
+            <span style="font-size: 0.9rem; color: #7a5a2e;"><i class="fas fa-university"></i> جامعة الملك فيصل</span>
         </div>
     </section>
 
-    <!-- خاتمة نصية موسعة -->
+    <!-- قسم المراجع -->
+    <section id="references">
+        <div class="section-title"><i class="fas fa-book"></i> المراجع والمصادر</div>
+        <div class="card">
+            <ul style="margin-right: 30px; line-height: 2;">
+                <li>كوهين، برنارد. (1963). <em>الصحافة والسياسة الخارجية</em>. جامعة برينستون.</li>
+                <li>منظمة الصحة العالمية. (2020). <em>إدارة وباء المعلومات (Infodemic) في العصر الرقمي</em>.</li>
+                <li>الشريف، محمد أحمد هاشم. <em>محاضرات مقرر الإعلام وقضايا المجتمع</em>. جامعة الملك فيصل.</li>
+                <li>دراسات في سيكولوجية الإعلام: تأثير الخوف من المجهول على السلوك المجتمعي (2023).</li>
+                <li>يوتيوب: فيلم تعليمي عن الخوف من المجهول – قناة Ted-Ed Arabia.</li>
+                <li>بودكاست "فكر" – حلقة تأثير الإعلام على المخاوف المجتمعية.</li>
+            </ul>
+        </div>
+    </section>
+
     <section>
         <div class="card">
             <h3><i class="fas fa-eye"></i> نحو وعي إعلامي: كيف نتصدى للخوف المصنع؟</h3>
@@ -256,8 +272,9 @@
 
 <footer>
     <div class="container">
-        <p><i class="fas fa-university"></i> مشروع مقرر الإعلام وقضايا المجتمع | جامعة | موضوع: الخوف من المجهول</p>
-        <p>تم تصميم الموقع باستخدام صور توضيحية من مصادر مجانية، وفيديو تعليمي من يوتيوب، ومقطع صوتي نموذجي لأغراض أكاديمية.</p>
+        <p><i class="fas fa-university"></i> مشروع مقرر الإعلام وقضايا المجتمع | جامعة الملك فيصل</p>
+        <p><i class="fas fa-graduation-cap"></i> قسم الاتصال والإعلام | باحثات ماجستير</p>
+        <p>تم تصميم الموقع باستخدام صور توضيحية من مصادر مجانية، وفيديو وبودكاست تعليمي من يوتيوب لأغراض أكاديمية.</p>
         <p><i class="fas fa-users"></i> إعداد الطالبات: فاطمة إبراهيم، الجوهرة المدرع، ليلى العتيبي، ساره السليم، ساره القحطاني</p>
     </div>
 </footer>
@@ -299,12 +316,12 @@
         quizQuestions.forEach((q, idx) => {
             const div = document.createElement('div');
             div.className = 'quiz-question';
-            div.innerHTML = `<p>${idx+1}. ${q}</p><div class="rating" data-qidx="${idx}">`;
-            const ratingDiv = div.querySelector('.rating');
+            div.innerHTML = `<p>${idx+1}. ${q}</p><div class="rating">`;
             for(let i=1;i<=5;i++) {
                 const checked = quizAnswers[idx]===i ? 'checked' : '';
-                ratingDiv.innerHTML += `<label><input type="radio" name="q${idx}" value="${i}" ${checked}><span>${i}</span></label>`;
+                div.innerHTML += `<label><input type="radio" name="q${idx}" value="${i}" ${checked}><span>${i}</span></label>`;
             }
+            div.innerHTML += `</div>`;
             container.appendChild(div);
         });
         document.querySelectorAll('input[type="radio"]').forEach(radio => {
@@ -318,7 +335,7 @@
     renderQuiz();
     document.getElementById('submitQuiz')?.addEventListener('click',()=>{
         const total = quizAnswers.reduce((a,b)=>a+b,0);
-        let advice = total<=6?"✅ مستوى تأثر منخفض":(total<=11?"⚠️ مستوى تأثر متوسط":"🔴 مستوى تأثر مرتفع");
+        let advice = total<=6?"✅ مستوى تأثر منخفض: تمتلك وعياً إعلامياً جيداً":(total<=11?"⚠️ مستوى تأثر متوسط: أنت معرض لتأثير الإثارة":"🔴 مستوى تأثر مرتفع: الخوف من المجهول يتحكم بك بشكل كبير");
         document.getElementById('quizResult').innerHTML = `<i class="fas fa-chart-simple"></i> مجموع النقاط: ${total} من 15. ${advice}`;
     });
     document.getElementById('resetQuiz')?.addEventListener('click',()=>{ quizAnswers=[3,3,3]; renderQuiz(); document.getElementById('quizResult').innerHTML=''; });
@@ -333,16 +350,26 @@
     const displayDiv = document.getElementById('analysisDisplay');
     btns.forEach((btn,idx)=>{ btn.addEventListener('click',()=>{ displayDiv.innerHTML = `<i class="fas fa-pen-fancy"></i> <strong>تحليل العنوان: "${headlinesAnalysis[idx].title}"</strong><br><br>${headlinesAnalysis[idx].analysis}<br><br><i class="fas fa-shield-alt"></i> تجنب استهلاك العناوين بدون سياق.`; }); });
 
-    // بناء بطاقات الطالبات
+    // بناء بطاقات الطالبات (أيقونة رسمية موحدة، بدون أدوار)
     const studentsData = [
-        { fullName:"فاطمه إبراهيم العلي", id:"226030850", icon:"fas fa-female", role:"" },
-        { fullName:"الجوهرة عبدالله المدرع", id:"226030426", icon:"fas fa-user-graduate", role:" " },
-        { fullName:"ليلى عبدالله العتيبي", id:"226029747", icon:"fas fa-pen-nib", role:" " },
-        { fullName:"ساره عبدالله السليم", id:"226030461", icon:"fas fa-chart-line", role:" " },
-        { fullName:"ساره عمهوج القحطاني", id:"226032049", icon:"fas fa-laptop-code", role:" " }
+        { fullName:"فاطمه إبراهيم العلي", id:"226030850", icon:"fas fa-user-tie" },
+        { fullName:"الجوهرة عبدالله المدرع", id:"226030426", icon:"fas fa-user-tie" },
+        { fullName:"ليلى عبدالله العتيبي", id:"226029747", icon:"fas fa-user-tie" },
+        { fullName:"ساره عبدالله السليم", id:"226030461", icon:"fas fa-user-tie" },
+        { fullName:"ساره عمهوج القحطاني", id:"226032049", icon:"fas fa-user-tie" }
     ];
     const grid = document.getElementById('studentsGrid');
-    if(grid) studentsData.forEach(s=>{ grid.innerHTML += `<div class="student-card"><div class="student-icon"><i class="${s.icon}"></i></div><div class="student-name">${s.fullName}</div><div class="student-id"><i class="fas fa-id-card"></i> ${s.id}</div><div class="student-role"><i class="fas fa-certificate"></i> ${s.role}</div></div>`; });
+    if(grid) {
+        grid.innerHTML = '';
+        studentsData.forEach(s=>{ 
+            grid.innerHTML += `<div class="student-card">
+                <div class="student-icon"><i class="${s.icon}"></i></div>
+                <div class="student-name">${s.fullName}</div>
+                <div class="student-id"><i class="fas fa-id-card"></i> ${s.id}</div>
+                <div class="student-major"><i class="fas fa-graduation-cap"></i> قسم الاتصال والإعلام | ماجستير</div>
+            </div>`;
+        });
+    }
 </script>
 </body>
 </html>
